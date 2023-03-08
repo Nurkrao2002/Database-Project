@@ -58,7 +58,7 @@ app.get("/students",function(req, res, next){
         pool.query(postgres,function(error, result){
         if(error) console.log(error); 
         // console.log(result);
-        res.render(__dirname+"/students", {students: result}); 
+        res.render(__dirname+"/students", {students:result}); 
         });
     });
 });
