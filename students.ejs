@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's List</title>
+    <style>
+        /* *{
+            text-align: center;
+        } */
+        h2{
+            text-align: center;
+            justify-content: center;
+
+        }
+        h1 {
+            text-align: center;
+            justify-content: center;
+        }
+        h3 {
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1> Student's DB</h1> 
+    
+     <!-- <a href="http://127.0.0.1:7000/" >To Add Data To Database Click Here</a> -->
+
+    <table border="1" width="100%">
+        
+        <% if(students.length > 0 ){ %>
+
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Actions</th>
+            </tr>
+
+            
+            <% for(var i = 0;i<students.length;i++){ %>
+
+               
+     
+
+                
+
+                
+            <tr>
+                <td><%- students[i].id %></td>
+                <td><%- students[i].name %></td>
+                <td><%- students[i].email %></td>
+                <td><%- students[i].mno %></td>
+                <td><a href="/delete-statement?id=<%- students[i].id %>">Delete</a>   </td>
+                
+            </tr>
+
+            <% } %>
+
+           <% }else{ %>
+
+                
+            <h2>No Data Found...!</h2>
+            <h3>Sever is Bussy..! Please Try Again later...</h3>
+            
+           <%  }  %>
+           
+        
+
+    </table>
+    
+</body>
+</html>

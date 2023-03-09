@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's List</title>
+   
+</head>
+<body>
+    <h1> Student's DB</h1> 
+    
+     <!-- <a href="http://127.0.0.1:7000/" >To Add Data To Database Click Here</a> -->
+
+    <table border="1" width="100%">
+
+
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+            
+        </tr>
+        
+        <% if(students.length > 0 ){ %>
+
+            
+            <% for(var i = 0;i<students.length;i++){ %>
+
+                
+            <tr>
+                <td><%- students[i].id %></td>
+                <td><%- students[i].name %></td>
+                <td><%- students[i].email %></td>
+                <td><%- students[i].mno %></td>
+               
+                
+            </tr>
+
+            <% } %>
+
+           <% }else{ %>
+
+                <tr>
+                    <td>Data Not Found...!</td>
+                </tr>
+            
+            
+           <%  }  %>
+           
+        
+
+    </table>
+    
+</body>
+</html>
