@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Data</title>
+    <style>
+        *{
+            text-align: center;
+            justify-content: center;
+            background-color: rgb(160, 210, 243);
+        }
+        table {
+            background-color: aliceblue;
+        }
+        #uday1 th {
+            background-color: aliceblue;
+            color: rgb(13, 13, 13);
+        }
+        #uday2 tr {
+            background-color: aliceblue;
+            color: rgb(15, 15, 15);
+        }
+        #uday3 td {
+            background-color: aliceblue;
+            color: rgb(15, 15, 15);
+        }
+        form {
+            margin-bottom: 3%;
+            height: 15px;
+            text-align: center;
+            justify-content: center;
+
+        }
+        #search{
+            /* background-color: aliceblue; */
+            width: 40%;
+            background-color: aliceblue;
+            height: 35px;
+            border: 1.5px solid rgb(32, 30, 30);
+            border-radius: 4px;
+        }
+        #btn {
+            height: 30px;
+            width: 10%;
+            background-color: rgb(22, 78, 232);
+            color: aliceblue;
+            border: none;
+            border-radius: 4px;
+            border: 1.5px solid rgb(33, 33, 32);
+            font-weight: 500;
+        }
+        #btn :hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1> Student's Data From Database...</h1>  
+     <!-- <a href="http://127.0.0.1:7000/" >To Add Data To Database Click Here</a> -->
+
+     <form action="/search">
+        <input id="search" type="search" name="name" placeholder="Search Name">
+        <input id="btn" type="submit" value="Submit">
+     </form>
+
+     <table border="1" width="100%">
+        <thead>
+          <tr id="uday1">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>MOBILE NUMBER</th>
+          </tr>
+        </thead>
+        <tbody id="uday2">
+
+           <% for (let i = 0; i < students.length; i++) { %>
+            <tr id="uday3">
+              <td><%= students[i].id %></td>
+              <td><%= students[i].name %></td>
+              <td><%= students[i].email %></td>
+              <td><%= students[i].mno %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+           
+        
+
+    </table>
+    
+</body>
+</html>
